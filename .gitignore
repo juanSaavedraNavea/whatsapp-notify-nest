@@ -58,3 +58,4 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 #whatsapp-web.js session data
 .wwebjs_auth
 .wwebjs_cache
+.wpp

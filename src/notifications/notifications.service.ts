@@ -211,7 +211,9 @@ export class NotificationsService {
     const includeInviteCode = !!options?.includeInviteCode;
   
     const client = await this.wpp.maybeReinit();
-    if (!client) return [{ message: 'Cliente no ha iniciado sesión' }];
+    if (!client){
+      throw new Error('WhatsApp client no inicializado / no autenticado');
+    };
   
     // Trae todos los chats y filtra solo grupos
     const chats = await client.getChats();
