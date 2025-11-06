@@ -69,7 +69,7 @@ NODE_ENV=production
 TZ=America/Santiago
 
 # MongoDB Atlas
-MONGODB_URI="mongodb+srv://<user>:<pass>@<cluster>.mongodb.net/ceranalytics"
+MONGODB_URI="mongodb+srv://<user>:<pass>@<cluster>.mongodb.net/entorno"
 
 # WhatsApp RemoteAuth
 WPP_DATA_DIR=/app/.wpp
