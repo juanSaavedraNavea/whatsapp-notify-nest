@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cer-notify-api
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    # Lee variables desde .env (recomendado)
+    env_file:
+      - .env
+    environment:
+      # valores por defecto/override (opcional)
+      NODE_ENV: production
+      TZ: America/Santiago
+      WPP_DATA_DIR: "/app/.wpp"
+    volumes:
+      # Persistimos la sesión de WhatsApp para no loguear cada vez
+      - ./wpp-data:/app/.wpp
+    #healthcheck:
+    #  test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000/api/metrics', res => { if(res.statusCode!==200){ process.exit(1);} }).on('error',()=>process.exit(1))"]
+    #  interval: 30s
+    #  timeout: 10s
+    #  start_period: 40s
+    #  retries: 3

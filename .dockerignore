@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.gitignore
+npm-debug.log
+Dockerfile
+docker-compose.yml
+.env
+.wpp
+wpp-data
+tmp
+coverage
